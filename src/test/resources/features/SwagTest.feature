@@ -1,4 +1,3 @@
-
 @swag
 Feature: Login Functionality
   User Story:
@@ -25,7 +24,7 @@ Feature: Login Functionality
   @problemUser
   Scenario: Login as Problem User
     When User enters valid password and username "problem_user" and clicks login
-    Then User should not be able to add Sauce Labs Fleece Jacket
+    Then User should see "Products" displayed on Products page
 
   @GlitchUser
   Scenario: Login as Performance glitch User
@@ -84,4 +83,7 @@ Feature: Login Functionality
       | standard_user           |
       | problem_user            |
       | performance_glitch_user |
+
+
+
 

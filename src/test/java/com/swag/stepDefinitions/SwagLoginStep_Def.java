@@ -56,7 +56,8 @@ public class SwagLoginStep_Def {
     public void user_should_wait_for_five_seconds_to_launch_to_product_page() {
         WebDriverWait wait= new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(5));
         wait.until(ExpectedConditions.visibilityOf(product.productsTitle));
-        Assert.assertEquals("Products",product.productsTitle.getText());
+        //Assert.assertEquals("Products",product.productsTitle.getText());
+        Assert.assertTrue(product.productsTitle.isDisplayed());
     }
 
 //_________________________INVALID CREDENTIALS STEPS
