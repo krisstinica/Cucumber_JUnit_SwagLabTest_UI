@@ -6,9 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-
 public class SwagLoginPage {
-
     public SwagLoginPage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
@@ -23,6 +21,7 @@ public class SwagLoginPage {
     @FindBy(xpath = "//h3[@data-test='error']")
     public WebElement error;
 
+    //LOGIN METHOD
     public void login(String user, String pass) {
         this.username.sendKeys(user);
         this.password.sendKeys(pass);
@@ -30,7 +29,7 @@ public class SwagLoginPage {
 
 
     }
-
+    //VERIFY THE MESSAGE METHOD
     public void errorMessage(String message) {
         String expected = message;
         String actual = error.getText();
@@ -38,7 +37,7 @@ public class SwagLoginPage {
         Assert.assertEquals(expected, actual);
     }
 
-
+    //SWITCH USER CUSTOM METHOD
     public void userLogin(String username) {
         String usertype = username;
         String password = "secret_sauce";
